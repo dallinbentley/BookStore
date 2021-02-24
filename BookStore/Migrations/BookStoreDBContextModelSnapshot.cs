@@ -30,10 +30,10 @@ namespace BookStore.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AuthorLast")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("AuthorMiddle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Category")
@@ -47,6 +47,9 @@ namespace BookStore.Migrations
                     b.Property<string>("ISBN")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Pages")
+                        .HasColumnType("int");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");

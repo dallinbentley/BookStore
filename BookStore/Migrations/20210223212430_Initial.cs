@@ -14,13 +14,14 @@ namespace BookStore.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     AuthorFirst = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AuthorMiddle = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AuthorLast = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AuthorMiddle = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    AuthorLast = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Classification = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Category = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Price = table.Column<double>(type: "float", nullable: false)
+                    Price = table.Column<double>(type: "float", nullable: false),
+                    Pages = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
