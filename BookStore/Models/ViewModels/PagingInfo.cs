@@ -10,6 +10,8 @@ namespace BookStore.Models.ViewModels
         public int TotalNumItems { get; set; }
         public int ItemsPerPage { get; set; }
         public int CurrentPage { get; set; }
+
+        //This just gets a whole number of the total pages to have.
         public int TotalPages => (int)(Math.Ceiling((decimal)TotalNumItems / ItemsPerPage));
     }
 }

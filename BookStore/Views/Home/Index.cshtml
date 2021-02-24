@@ -5,11 +5,11 @@
 @model ProjectListViewModel
 
 <div class="text-center">
-    <table class="table table-bordered">
+    <table class="table table-bordered table-hover">
         <thead class="thead-light">
             <tr><th scope="col">Book ID</th><th scope="col">Title</th><th scope="col">Author</th><th scope="col">Publisher</th><th scope="col">ISBN</th><th scope="col">Classification</th><th scope="col">Category</th><th scope="col">Price</th><th scope="col">Pages</th></tr>
         </thead>
-        <tbody class="table-hover">
+        <tbody>
             <!--Cycles through all of the seed data in Books db-->
             @foreach (var x in Model.Books)
             {
@@ -30,6 +30,7 @@
     </table>
 </div>
 <br />
+<!--This is for the buttons that enable pagination-->
 <div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
      page-class-normal ="btn-outline-dark"
      page-class-selected="btn-primary"

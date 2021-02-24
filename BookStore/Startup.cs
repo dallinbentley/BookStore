@@ -58,6 +58,7 @@ namespace BookStore
 
             app.UseEndpoints(endpoints =>
             {
+                //I changed this so that the url will show as P1, P2, etc.
                 endpoints.MapControllerRoute(
                     "pagination",
                     "P{page}",

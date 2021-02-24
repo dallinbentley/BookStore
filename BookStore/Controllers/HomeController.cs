@@ -26,7 +26,7 @@ namespace BookStore.Controllers
 
         public IActionResult Index(int page = 1)
         {
-            //This sends the Books db to the view
+            //This sends the Books db to the view in chunks of five
             return View(new ProjectListViewModel
             {
                 Books = _repository.Books
