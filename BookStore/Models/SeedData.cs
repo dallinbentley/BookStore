@@ -176,7 +176,7 @@ namespace BookStore.Models
                         Publisher = "Harper Collins",
                         ISBN = "978-0007490547",
                         Classification = "Non-Fiction",
-                        Category = "Self Help",
+                        Category = "Self-Help",
                         Price = 11.09,
                         Pages = 240
                     },

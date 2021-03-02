@@ -29,7 +29,7 @@ namespace BookStore
 
             services.AddDbContext<BookStoreDBContext>(options =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:BookStoreConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:BookStoreConnection"]);
             });
 
             services.AddScoped<IBookRepository, EFBookStoreRepository>();
@@ -58,6 +58,19 @@ namespace BookStore
 
             app.UseEndpoints(endpoints =>
             {
+                //If they have a category and page
+                endpoints.MapControllerRoute("categorypage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+                //If they put just a page
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+                //If they put just a category
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", page = 1 });
+
                 //I changed this so that the url will show as P1, P2, etc.
                 endpoints.MapControllerRoute(
                     "pagination",
