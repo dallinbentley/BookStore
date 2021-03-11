@@ -10,7 +10,7 @@
     <a class="btn btn-sm @(category == ViewBag.CurrentCategory ? "btn-primary" : "btn-outline-primary")"
        asp-action="Index" asp-controller="Home"
        asp-route-category="@category"
-       asp-route-page="1">
+       asp-route-pageNum="1">
         @category
     </a>
 }
